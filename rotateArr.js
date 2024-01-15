@@ -57,8 +57,8 @@ function rotateArr(arr, moveBy) {
     */
 }
 
-var myArr1 = [1, 2, 3, 4, 5]
-rotateArr(myArr1, -512908378902)
+var myArr1 = [1, 2, 3, 4, 5, 9, 18]
+rotateArr(myArr1, -512908378902132)
 console.log(myArr1)
 
 // More efficiency

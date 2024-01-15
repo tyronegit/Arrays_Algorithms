@@ -1,9 +1,17 @@
 function rotateArr(arr, moveBy) {
+    // Improve efficency to get the actual number of rotations needed
+    var actualMovementsNeeded
+    if (moveBy > 0) {
+        actualMovementsNeeded = moveBy % arr.length
+    } else {
+        actualMovementsNeeded = Math.abs(moveBy) % arr.length
+    }
+
     if (moveBy > 0) {
         // Handle rotations to the right
 
         // Loop through all the rotations
-        for (var i = 0; i < moveBy; i++){
+        for (var i = 0; i < actualMovementsNeeded; i++){
             // Handle the single rotation
             var temp = arr[arr.length - 1]
             // Loop moves items to the right one index
@@ -14,8 +22,7 @@ function rotateArr(arr, moveBy) {
         }
     } else {
         /* Handle rotations to the left */
-        var numRotations = Math.abs(moveBy) // Actual number of rotations (absolute value)
-        for (var i = 0; i < numRotations; i++){
+        for (var i = 0; i < actualMovementsNeeded; i++){
             var temp = arr[0]
             // Loop moves items to the left on index
             for (var k =1; k < arr.length; k++) {
@@ -51,7 +58,7 @@ function rotateArr(arr, moveBy) {
 }
 
 var myArr1 = [1, 2, 3, 4, 5]
-rotateArr(myArr1, -2)
+rotateArr(myArr1, -512908378902)
 console.log(myArr1)
 
 // More efficiency

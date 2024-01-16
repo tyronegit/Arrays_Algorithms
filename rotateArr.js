@@ -94,6 +94,38 @@ function reverseArr(arr, startingInd = 0, endingInd = arr.length -1) {
 
 }
 
-var x1 = [10, 20, 30, 40, 50, 60, 70, 80]
-rotateArrV2(x1, 4)
-console.log(x1)
+// var x1 = [10, 20, 30, 40, 50, 60, 70, 80]
+// rotateArrV2(x1, 4)
+// console.log(x1)
+/*------------------------------------------------------------------------------------- */
+
+// filterRange function
+
+// Example: [5, 8, 4, 2, 3], min = 3, max = 6
+// Result: [5, 4, 3]
+
+function filterRange(arr, minVal, maxVal) {
+    /* 
+    Loop through the array
+    If the value is NOT between min and max:
+        then move all values after current index to the left one <-- Loop
+        shorten the length of the array
+    Else:
+        Move on to the next index
+    */
+    for (var i = 0; i < arr.length; i++) {
+        // If value is NOT from min to max (inclusively)
+        if (arr[i] < minVal || arr[i] > maxVal) {
+            // Move everything that comes afterwards left one index
+            for (var k = i + 1; k < arr.length; k++) {
+                arr[k-1] = arr[k]
+            }
+            arr.length--  // Decrease the length of the array by one
+            i-- // To cancel the i++ operation effectively
+        }
+    }    
+}
+
+var myArr1 = [5, 8, 4, 2, 1, 3]
+filterRange(myArr1, 3, 6)
+console.log(myArr1)

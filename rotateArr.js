@@ -126,6 +126,10 @@ function filterRange(arr, minVal, maxVal) {
     }    
 }
 
-var myArr1 = [5, 8, 4, 2, 1, 3]
+var myArr1 = [9, 10, 1, 3, 5, 8, 4, 2, 1, 10]
+filterRange(myArr1, 3, 6)
+console.log(myArr1)
+
+var myArr1 = [5]
 filterRange(myArr1, 3, 6)
 console.log(myArr1)

@@ -126,10 +126,42 @@ function filterRange(arr, minVal, maxVal) {
     }    
 }
 
-var myArr1 = [9, 10, 1, 3, 5, 8, 4, 2, 1, 10]
-filterRange(myArr1, 3, 6)
-console.log(myArr1)
+// var myArr1 = [9, 10, 1, 3, 5, 8, 4, 2, 1, 10]
+// filterRange(myArr1, 3, 6)
+// console.log(myArr1)
 
-var myArr1 = [5]
-filterRange(myArr1, 3, 6)
-console.log(myArr1)
+// var myArr1 = [5]
+// filterRange(myArr1, 3, 6)
+// console.log(myArr1)
+/*---------------------------------------------------------------------- */
+// Filter Range Two
+// Second method with only one for loop
+function filterRangeV2(arr, minVal, maxVal) {
+    var nextInd = 0 // Index where the next array value that's from min to max (inclusively) will go
+    // Loop through the array
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] >= minVal && arr[i] <= maxVal) {
+            arr[nextInd] = arr[i]
+            nextInd++ // Increment index for net valid value found
+        }
+    }
+    arr.length = nextInd //Chop off the excess items
+
+}
+
+var someArr1 = [9, 10, 1, 3, 5, 8, 4, 2, 1, 10]
+filterRangeV2(someArr1, 3, 6)
+console.log(someArr1)
+
+var someArr2 = [3, 5, 4, 5, 3]
+filterRangeV2(someArr1, 3, 6)
+console.log(someArr2)
+
+
+
+
+
+
+
+
+

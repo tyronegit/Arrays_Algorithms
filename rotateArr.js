@@ -149,14 +149,52 @@ function filterRangeV2(arr, minVal, maxVal) {
 
 }
 
-var someArr1 = [9, 10, 1, 3, 5, 8, 4, 2, 1, 10]
-filterRangeV2(someArr1, 3, 6)
-console.log(someArr1)
+// var someArr1 = [9, 10, 1, 3, 5, 8, 4, 2, 1, 10]
+// filterRangeV2(someArr1, 3, 6)
+// console.log(someArr1)
 
-var someArr2 = [3, 5, 4, 5, 3]
-filterRangeV2(someArr1, 3, 6)
-console.log(someArr2)
+// var someArr2 = [3, 5, 4, 5, 3]
+// filterRangeV2(someArr1, 3, 6)
+// console.log(someArr2)
 
+/*---------------------------------------------------------------------- */
+//Concatenant arrays
+function concatArrays(arr1, arr2) {
+    var newArr = [];
+    var curInd = 0;
+    // Loop through the first array and push items into the new array
+    for(var i = 0; i < arr1.length; i++){
+        // newArr.push(arr1[i])
+        newArr[curInd] = arr1[i]
+        curInd++
+    }    
+    // Loop through the second array and push items into the new array
+    for(var i = 0; i < arr2.length; i++){
+        // newArr.push(arr1[i])
+        newArr[curInd] = arr2[i]
+        curInd++
+    } 
+    return newArr   
+}
+
+
+function concatArraysV2(arr1, arr2) {
+    var newArr = []
+    buildFrom(newArr, arr1)
+    buildFrom(newArr, arr2)
+    return newArr
+}    
+
+function buildFrom(arrayToBuild, arrayFrom){
+    var curInd = arrayToBuild.length
+    for(var i = 0; i < arrayFrom.length; i++) {
+        arrayToBuild[curInd] = arrayFrom[i]
+        curInd++
+    }   
+}
+
+var result1 = concatArraysV2([1, 'Money', -5, 17, 149], [3, 'Hello'])
+console.log(result1)
 
 
 
